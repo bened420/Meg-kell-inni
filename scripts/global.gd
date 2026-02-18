@@ -1,6 +1,6 @@
 extends Node
 
-#csak fejlesztes soran , kulso fajl beolvasasa a projekt mappabol tortenjen-e vagy a .exe fajl mellol
+#ha true akkor projekten belul olvas, .exe-nel legyen true
 var _externalread = false
 
 #--globális változók--
@@ -14,13 +14,15 @@ var kozonseg = true
 var felezes = true
 var google = true
 #jatek kerdesek
-var kerdesek
-var valaszok 
-var helyesval
+var kerdesek: Array[Dictionary] = []
+#jatekosok
+var jatekosok
+var txtlista
 
 
 func _ready() -> void:
-	pass 
+	SajatKerdes("teszt.txt");
+	
 
 
 func SajatKerdes(fajl_nev: String) -> String:
@@ -28,7 +30,49 @@ func SajatKerdes(fajl_nev: String) -> String:
 		var exehely = OS.get_executable_path()
 		var dirhely = exehely.get_base_dir()
 		var txthely = dirhely.path_join(fajl_nev)
-		
+		if not FileAccess.file_exists(txthely):
+			return "Fajl nem letezik"
+		else:
+			var fajl = FileAccess.open(txthely,FileAccess.READ)
+			while not fajl.eof_reached():
+				var line = fajl.get_line().strip_edges()
+				if line.is_empty():
+					continue
+				var reszek = line.split(";")
+				if reszek.size() >= 6:
+					var kerdesek_szotar = {
+					"kerdes": reszek[0],
+					"a": reszek[1],
+					"b": reszek[2],
+					"c": reszek[3],
+					"d": reszek[4],
+					"helyesindex": reszek[5].to_int()-1
+					}
+					kerdesek.append(kerdesek_szotar)
+				else:
+					return fajl_nev
+			
 	else:
-		pass
-	return "teszt"
+		var teszttxt = "res://teszt.txt"
+		if not FileAccess.file_exists(teszttxt):
+			return "Fajl nem letezik"
+		else:
+			var fajl = FileAccess.open(teszttxt,FileAccess.READ)
+			while not fajl.eof_reached():
+				var line = fajl.get_line().strip_edges()
+				if line.is_empty():
+					continue
+				var reszek = line.split(";")
+				if reszek.size() >= 6:
+					var kerdesek_szotar = {
+					"kerdes": reszek[0],
+					"a": reszek[1],
+					"b": reszek[2],
+					"c": reszek[3],
+					"d": reszek[4],
+					"helyesindex": reszek[5].to_int()-1
+					}
+					kerdesek.append(kerdesek_szotar)
+				else:
+					return "hibas teszt"
+	return "OK"

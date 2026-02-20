@@ -1,5 +1,135 @@
 [gd_scene format=3 uid="uid://0ld3omvladaa"]
 
+[ext_resource type="Script" uid="uid://vn7m32qxmont" path="res://scripts/mainmenu.gd" id="1_3vvtq"]
+[ext_resource type="Texture2D" uid="uid://brfctl1eqmy1h" path="res://assets/pattern (1).svg" id="1_natt5"]
+[ext_resource type="FontFile" uid="uid://s5c0vqf6x30d" path="res://assets/Roboto-Regular.ttf" id="2_natt5"]
+[ext_resource type="StyleBox" uid="uid://cp0vdv2ug0uuf" path="res://assets/panel.tres" id="2_r3g3c"]
+[ext_resource type="Texture2D" uid="uid://dc2bk2vryxyhm" path="res://assets/sör.svg" id="5_s5g8n"]
+
 [node name="Mainmenu" type="Control" unique_id=1288837805]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3vvtq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=951240172]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_natt5")
+stretch_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=423747648]
+layout_mode = 1
+offset_right = 498.0
+offset_bottom = 114.0
+theme_override_styles/panel = ExtResource("2_r3g3c")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1227772821]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=209641097]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 50
+text = "Meg Kell Inni!"
+
+[node name="Label" type="Label" parent="." unique_id=1292465444]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -36.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 30
+text = "By: Baranyai Benedek v0.1"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=41695021]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -280.0
+offset_right = 444.0
+offset_bottom = 280.0
+grow_vertical = 2
+theme_override_constants/margin_left = 65
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 400
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1471245137]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=132430985]
+layout_mode = 2
+theme_override_constants/separation = 119
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=392479738]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 40
+text = " Név"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1413713134]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 40
+text = "Fájl név"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1794156751]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1738752017]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 40
+max_length = 10
+expand_to_text_length = true
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=170103336]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 40
+
+[node name="start" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1823128398]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("2_r3g3c")
+theme_override_styles/pressed = ExtResource("2_r3g3c")
+theme_override_styles/hover = ExtResource("2_r3g3c")
+text = "Játék indítása "
+
+[node name="exit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=658180849]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("2_r3g3c")
+theme_override_styles/pressed = ExtResource("2_r3g3c")
+theme_override_styles/hover = ExtResource("2_r3g3c")
+text = "Kilépés"
+
+[node name="Sör" type="Sprite2D" parent="." unique_id=1541631526]
+position = Vector2(1200, 540)
+rotation = -0.43633232
+texture = ExtResource("5_s5g8n")
+
+[node name="Sör2" type="Sprite2D" parent="." unique_id=903513643]
+position = Vector2(1550, 540)
+rotation = 0.43633232
+texture = ExtResource("5_s5g8n")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]

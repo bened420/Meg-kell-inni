@@ -15,15 +15,19 @@ var felezes = true
 var google = true
 #jatek kerdesek
 var kerdesek: Array[Dictionary] = []
-#jatekosok
-var jatekosok
-var txtlista
+#jatekosok es kerdes
+var jatekosok = []
+var txtlista = []
 
 
 func _ready() -> void:
 	SajatKerdes("teszt.txt");
 	
+	
 
+func _process(delta: float) -> void:
+	if Input.is_key_pressed(KEY_ESCAPE):
+		get_tree().quit()
 
 func SajatKerdes(fajl_nev: String) -> String:
 	if _externalread == true:

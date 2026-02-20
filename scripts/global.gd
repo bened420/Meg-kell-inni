@@ -1,7 +1,7 @@
 extends Node
 
 #ha true akkor projekten belul olvas, .exe-nel legyen true
-var _externalread = false
+var _externalread = true
 
 #--globális változók--
 #jatek valtozok
@@ -16,8 +16,12 @@ var google = true
 #jatek kerdesek
 var kerdesek: Array[Dictionary] = []
 #jatekosok es kerdes
-var jatekosok = []
-var txtlista = []
+var jatekos
+var txt
+
+var kerdesekszama
+var jelenlegi = 0
+var sörszám = 10
 
 
 func _ready() -> void:
@@ -30,6 +34,7 @@ func _process(delta: float) -> void:
 		get_tree().quit()
 
 func SajatKerdes(fajl_nev: String) -> String:
+	print("Futas")
 	if _externalread == true:
 		var exehely = OS.get_executable_path()
 		var dirhely = exehely.get_base_dir()
@@ -79,4 +84,5 @@ func SajatKerdes(fajl_nev: String) -> String:
 					kerdesek.append(kerdesek_szotar)
 				else:
 					return "hibas teszt"
+	kerdesekszama = kerdesek.size()
 	return "OK"

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cfcqqo7unv2g6"]
+
+[ext_resource type="Texture2D" uid="uid://dc2bk2vryxyhm" path="res://assets/sör.svg" id="1_3k4u4"]
+
+[node name="söci" type="TextureRect" unique_id=1166239785]
+custom_minimum_size = Vector2(40, 40)
+mouse_filter = 2
+texture = ExtResource("1_3k4u4")
+expand_mode = 1
+stretch_mode = 5

@@ -1,0 +1,320 @@
+[gd_scene format=3 uid="uid://b0acg2sjjg6at"]
+
+[ext_resource type="Script" uid="uid://cy6uwmei3a3np" path="res://scenes/game.gd" id="1_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://ctdr7o7we2qbx" path="res://assets/hexaszurke.svg" id="1_yqjtg"]
+[ext_resource type="FontFile" uid="uid://s5c0vqf6x30d" path="res://assets/Roboto-Regular.ttf" id="2_yqjtg"]
+[ext_resource type="StyleBox" uid="uid://ofwcv526cyb0" path="res://assets/button.tres" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://dhqkf6jpjcxxh" path="res://assets/person.svg" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://d3b4lhknnl8bs" path="res://assets/personpressed.svg" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://bmvp4l6vccbv2" path="res://assets/chickenpressed.svg" id="7_gee14"]
+[ext_resource type="Texture2D" uid="uid://ly1mkkfkrev2" path="res://assets/chicken.svg" id="8_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://bjqdty1k0isp3" path="res://assets/felezes.svg" id="9_vtaks"]
+[ext_resource type="Texture2D" uid="uid://dr6chqaykohnc" path="res://assets/felezespressed.svg" id="10_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://b2xdmve3d4llf" path="res://assets/google.svg" id="11_dinhu"]
+[ext_resource type="Texture2D" uid="uid://brkv5yr0lpct8" path="res://assets/googlepressed.svg" id="12_kvuet"]
+[ext_resource type="Script" uid="uid://dy1f1fftklqlm" path="res://scenes/idozito.gd" id="13_kvuet"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
+corner_detail = 12
+
+[node name="Game" type="Control" unique_id=1136034945]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lbhrr")
+
+[node name="Hatter" type="TextureRect" parent="." unique_id=369635227]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yqjtg")
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=213208232]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 107.0
+offset_top = 57.0
+offset_right = -113.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 800
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=186380553]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
+
+[node name="Label" type="Label" parent="MarginContainer/Panel" unique_id=721276413]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.656
+offset_left = 8.0
+offset_top = -24.0
+offset_right = -8.0
+offset_bottom = -0.04800415
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yqjtg")
+theme_override_font_sizes/font_size = 40
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=692299738]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer" unique_id=556855936]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 50
+columns = 2
+
+[node name="A" type="Button" parent="CenterContainer/GridContainer" unique_id=1573158747]
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yqjtg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("3_lnu2h")
+theme_override_styles/hover = ExtResource("3_lnu2h")
+text = "A"
+autowrap_mode = 1
+
+[node name="aHBOX" type="HBoxContainer" parent="CenterContainer/GridContainer/A" unique_id=246859417]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="B" type="Button" parent="CenterContainer/GridContainer" unique_id=2137957943]
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yqjtg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("3_lnu2h")
+theme_override_styles/hover = ExtResource("3_lnu2h")
+text = "B"
+autowrap_mode = 1
+
+[node name="bHBOX" type="HBoxContainer" parent="CenterContainer/GridContainer/B" unique_id=1316714235]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="C" type="Button" parent="CenterContainer/GridContainer" unique_id=1593942488]
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yqjtg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("3_lnu2h")
+theme_override_styles/hover = ExtResource("3_lnu2h")
+text = "C"
+autowrap_mode = 1
+
+[node name="cHBOX" type="HBoxContainer" parent="CenterContainer/GridContainer/C" unique_id=873292790]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="D" type="Button" parent="CenterContainer/GridContainer" unique_id=733567024]
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yqjtg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("3_lnu2h")
+theme_override_styles/hover = ExtResource("3_lnu2h")
+text = "D"
+autowrap_mode = 1
+
+[node name="dHBOX" type="HBoxContainer" parent="CenterContainer/GridContainer/D" unique_id=1646882950]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="sörreset" type="Button" parent="." unique_id=369680]
+custom_minimum_size = Vector2(100, 400)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -200.0
+offset_right = 100.0
+offset_bottom = 200.0
+grow_vertical = 2
+theme_override_styles/normal = ExtResource("3_lnu2h")
+theme_override_styles/hover = ExtResource("3_lnu2h")
+
+[node name="MainVBOX" type="VBoxContainer" parent="sörreset" unique_id=1974443408]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -206.0
+offset_top = 3.0
+offset_right = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=1668932561]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer2" unique_id=1489570480]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 500
+
+[node name="vegleges" type="Button" parent="CenterContainer2/MarginContainer" unique_id=719345609]
+visible = false
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yqjtg")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("3_lnu2h")
+theme_override_styles/hover = ExtResource("3_lnu2h")
+text = "Végleges válasz"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=958827592]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+offset_right = 604.0
+grow_vertical = 0
+
+[node name="Közönség" type="TextureButton" parent="HBoxContainer" unique_id=1142562658]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture_normal = ExtResource("5_iywne")
+texture_pressed = ExtResource("5_iywne")
+texture_hover = ExtResource("6_p57ef")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Csirke" type="TextureButton" parent="HBoxContainer" unique_id=403794342]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture_normal = ExtResource("7_gee14")
+texture_pressed = ExtResource("7_gee14")
+texture_hover = ExtResource("8_0tnpc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Felezés" type="TextureButton" parent="HBoxContainer" unique_id=859670581]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture_normal = ExtResource("9_vtaks")
+texture_pressed = ExtResource("9_vtaks")
+texture_hover = ExtResource("10_kvpfn")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Google" type="TextureButton" parent="HBoxContainer" unique_id=1296007037]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture_normal = ExtResource("11_dinhu")
+texture_pressed = ExtResource("11_dinhu")
+texture_hover = ExtResource("12_kvuet")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="refill" type="Button" parent="." unique_id=1775023364]
+visible = false
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yqjtg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("3_lnu2h")
+theme_override_styles/hover = ExtResource("3_lnu2h")
+text = "REFILL"
+
+[node name="Timer" type="Label" parent="." unique_id=473236022]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yqjtg")
+theme_override_font_sizes/font_size = 90
+text = "0:30"
+script = ExtResource("13_kvuet")
+
+[connection signal="pressed" from="CenterContainer/GridContainer/A" to="." method="_on_a_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/B" to="." method="_on_b_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/C" to="." method="_on_c_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/D" to="." method="_on_d_pressed"]
+[connection signal="pressed" from="sörreset" to="." method="_on_sörreset_pressed"]
+[connection signal="pressed" from="HBoxContainer/Közönség" to="." method="_on_közönség_pressed"]
+[connection signal="pressed" from="HBoxContainer/Csirke" to="." method="_on_csirke_pressed"]
+[connection signal="pressed" from="HBoxContainer/Felezés" to="." method="_on_felezés_pressed"]
+[connection signal="pressed" from="HBoxContainer/Google" to="." method="_on_google_pressed"]
+[connection signal="pressed" from="refill" to="." method="_on_refill_pressed"]

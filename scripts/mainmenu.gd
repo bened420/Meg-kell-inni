@@ -5,6 +5,8 @@ extends Control
 
 
 func _ready() -> void:
+	Global.sörszám = 10
+	Global.kerdesek.clear()
 	Fajlok()
 	
 

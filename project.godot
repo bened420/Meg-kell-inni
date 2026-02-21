@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Meg Kell Inni! (Nerdhub)"
+config/version="1.0"
 run/main_scene="uid://0ld3omvladaa"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -24,6 +25,7 @@ Global="*uid://dgqs8aa4s66gc"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [input]
 

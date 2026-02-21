@@ -222,7 +222,7 @@ func _on_vegleges_pressed() -> void:
 				isziktext.text = Global.jatekos + " iszik " + str(iszik) + "db piát!"
 				isziktext.show()
 				vegleges.text = "Következő kör"
-				ujra = true 
+				ujra = true
 				
 			
 			

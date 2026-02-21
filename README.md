@@ -1,10 +1,10 @@
-# 🍻 Meg kell inni! - Kvízjáték
+# Meg kell inni!
 
 Ez a projekt a népszerű **Nerdhub** YouTube csatorna *"Meg kell inni!"* című ivós kvízjátékának rajongói megvalósítása, amely **Godot Engine** segítségével készült. Tedd próbára a tudásotokat, és oszd be okosan a söreidet!
 
 ---
 
-## 📝 Saját kérdések hozzáadása (Modding)
+## Saját kérdések hozzáadása
 
 A játék lehetőséget biztosít arra, hogy teljesen egyedi kérdéssorokkal játsszatok. Ehhez mindössze egy szöveges fájlt kell létrehoznod a játék főkönyvtárában.
 

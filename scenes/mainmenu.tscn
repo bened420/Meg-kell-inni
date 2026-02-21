@@ -52,7 +52,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_natt5")
 theme_override_font_sizes/font_size = 30
-text = "By: Baranyai Benedek v0.1"
+text = "By: Baranyai Benedek v1.0"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=41695021]
 layout_mode = 1

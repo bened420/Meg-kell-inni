@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://je233f1hf0pk"]
+
+[ext_resource type="FontFile" uid="uid://s5c0vqf6x30d" path="res://assets/Roboto-Regular.ttf" id="1_5lxq6"]
+[ext_resource type="Script" uid="uid://dy1f1fftklqlm" path="res://scripts/idozito.gd" id="2_g5y8c"]
+
+[node name="Timer" type="Label" unique_id=215091599]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_5lxq6")
+theme_override_font_sizes/font_size = 90
+text = "0:30"
+script = ExtResource("2_g5y8c")

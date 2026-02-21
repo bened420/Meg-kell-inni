@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cpcdpp7yakxdi"]
+
+[ext_resource type="Script" uid="uid://dftlcqgkhbdmq" path="res://scripts/end_screen.gd" id="1_87vmq"]
+[ext_resource type="Texture2D" uid="uid://ctdr7o7we2qbx" path="res://assets/hexaszurke.svg" id="2_g44xs"]
+[ext_resource type="FontFile" uid="uid://s5c0vqf6x30d" path="res://assets/Roboto-Regular.ttf" id="3_vj8vg"]
+[ext_resource type="Texture2D" uid="uid://dc2bk2vryxyhm" path="res://assets/sör.svg" id="4_plosh"]
+
+[node name="EndScreen" type="Control" unique_id=532176686]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87vmq")
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=80584510]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_g44xs")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=1362888821]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.039
+anchor_right = 1.0
+anchor_bottom = 0.127
+offset_left = 31.0
+offset_top = -0.12000275
+offset_right = -42.0
+offset_bottom = -0.16000366
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vj8vg")
+theme_override_font_sizes/font_size = 80
+text = "placeholder"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1999936046]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer" unique_id=417317144]
+layout_mode = 2
+theme_override_constants/margin_bottom = 900
+
+[node name="Sör" type="Sprite2D" parent="." unique_id=934488924]
+position = Vector2(765, 540)
+rotation = -0.43633232
+texture = ExtResource("4_plosh")
+
+[node name="Sör2" type="Sprite2D" parent="." unique_id=224924259]
+position = Vector2(1110, 540)
+rotation = 0.43633232
+texture = ExtResource("4_plosh")

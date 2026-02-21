@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0acg2sjjg6at"]
 
-[ext_resource type="Script" uid="uid://cy6uwmei3a3np" path="res://scenes/game.gd" id="1_lbhrr"]
+[ext_resource type="Script" uid="uid://cy6uwmei3a3np" path="res://scripts/game.gd" id="1_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://ctdr7o7we2qbx" path="res://assets/hexaszurke.svg" id="1_yqjtg"]
 [ext_resource type="FontFile" uid="uid://s5c0vqf6x30d" path="res://assets/Roboto-Regular.ttf" id="2_yqjtg"]
 [ext_resource type="StyleBox" uid="uid://ofwcv526cyb0" path="res://assets/button.tres" id="3_lnu2h"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dr6chqaykohnc" path="res://assets/felezespressed.svg" id="10_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://b2xdmve3d4llf" path="res://assets/google.svg" id="11_dinhu"]
 [ext_resource type="Texture2D" uid="uid://brkv5yr0lpct8" path="res://assets/googlepressed.svg" id="12_kvuet"]
-[ext_resource type="Script" uid="uid://dy1f1fftklqlm" path="res://scenes/idozito.gd" id="13_kvuet"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
 corner_detail = 12
@@ -290,7 +289,7 @@ theme_override_styles/normal = ExtResource("3_lnu2h")
 theme_override_styles/hover = ExtResource("3_lnu2h")
 text = "REFILL"
 
-[node name="Timer" type="Label" parent="." unique_id=473236022]
+[node name="timerpos" type="Control" parent="." unique_id=1726314949]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -298,21 +297,40 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -20.0
-offset_top = -23.0
+offset_top = -40.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="CenterContainer3" type="CenterContainer" parent="." unique_id=264913020]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer3" unique_id=232241319]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 450
+
+[node name="isziktext" type="Label" parent="CenterContainer3/MarginContainer" unique_id=861082093]
+visible = false
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_yqjtg")
-theme_override_font_sizes/font_size = 90
-text = "0:30"
-script = ExtResource("13_kvuet")
+theme_override_font_sizes/font_size = 70
+text = "A játékos 0 piát iszik!"
 
 [connection signal="pressed" from="CenterContainer/GridContainer/A" to="." method="_on_a_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/B" to="." method="_on_b_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/C" to="." method="_on_c_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/D" to="." method="_on_d_pressed"]
 [connection signal="pressed" from="sörreset" to="." method="_on_sörreset_pressed"]
+[connection signal="pressed" from="CenterContainer2/MarginContainer/vegleges" to="." method="_on_vegleges_pressed"]
 [connection signal="pressed" from="HBoxContainer/Közönség" to="." method="_on_közönség_pressed"]
 [connection signal="pressed" from="HBoxContainer/Csirke" to="." method="_on_csirke_pressed"]
 [connection signal="pressed" from="HBoxContainer/Felezés" to="." method="_on_felezés_pressed"]

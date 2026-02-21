@@ -5,7 +5,6 @@ var _externalread = true
 
 #--globális változók--
 #jatek valtozok
-var sor = 10
 var refill = true
 var currentkerdes = 0
 #segitsegek
@@ -16,12 +15,13 @@ var google = true
 #jatek kerdesek
 var kerdesek: Array[Dictionary] = []
 #jatekosok es kerdes
-var jatekos
+var jatekos = "Játékos"
 var txt
 
 var kerdesekszama
-var jelenlegi = 0
+var jelenlegi = 1
 var sörszám = 10
+var összivott = 0
 
 
 func _ready() -> void:

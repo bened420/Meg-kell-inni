@@ -52,7 +52,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_natt5")
 theme_override_font_sizes/font_size = 30
-text = "By: Baranyai Benedek v1.0"
+text = "By: Baranyai Benedek v1.1"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=41695021]
 layout_mode = 1
@@ -130,6 +130,20 @@ texture = ExtResource("5_s5g8n")
 position = Vector2(1550, 540)
 rotation = 0.43633232
 texture = ExtResource("5_s5g8n")
+
+[node name="hiba" type="Label" parent="." unique_id=748482403]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 50
+text = "Hibás fájl!"
 
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]

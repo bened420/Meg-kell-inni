@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="Meg Kell Inni! (Nerdhub)"
-config/version="1.0"
+config/version="1.1"
 run/main_scene="uid://0ld3omvladaa"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dc2bk2vryxyhm"
 
 [autoload]
 

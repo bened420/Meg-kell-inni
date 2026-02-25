@@ -2,9 +2,15 @@ extends Control
 
 @onready var line = $MarginContainer/VBoxContainer/HBoxContainer/LineEdit
 @onready var options = $MarginContainer/VBoxContainer/HBoxContainer/OptionButton
-
+@onready var hiba = $hiba
 
 func _ready() -> void:
+	hiba.hide()
+	Global.csirke = true
+	Global.kozonseg = true
+	Global.felezes = true
+	Global.google = true
+	Global.refill = true
 	Global.sörszám = 10
 	Global.kerdesek.clear()
 	Fajlok()
@@ -37,8 +43,10 @@ func _on_exit_pressed() -> void:
 func _on_start_pressed() -> void:
 	Global.txt = options.get_item_text(options.selected)
 	print(Global.txt)
-	Global.SajatKerdes(Global.txt)
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	if(Global.SajatKerdes(Global.txt) == "OK"):
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
+	else:
+		hiba.show()
 
 
 func _on_line_edit_text_changed(new_text: String) -> void:
